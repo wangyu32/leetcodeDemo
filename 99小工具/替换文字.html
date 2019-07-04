@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+
+</head>
+
+<body>
+<script language='javascript'>
+function onclick1(){
+	var src1 = document.getElementById("src1").value;
+	var dest1 = document.getElementById("dest1").value;
+	var src2 = document.getElementById("src2").value;
+	var dest2 = document.getElementById("dest2").value;
+	var text = document.getElementById("text1").value;
+	if(text){
+		while(text.indexOf(src1) > -1){
+			text = text.replace(src1, dest1);
+		}
+		while(text.indexOf(src2) > -1){
+			text = text.replace(src2, dest2);
+		}
+		document.getElementById("text2").value = text.trim();
+	}
+}
+</script>
+<table>
+<tr> 
+<td>原文字</td>
+<td><input id="src1" value="[" /></td>
+<td>替换文字</td>
+<td><input id="dest1" value="{" /></td>
+</tr>
+
+<tr> 
+<td>原文字</td>
+<td><input id="src2" value="]" /></td>
+<td>替换文字</td>
+<td><input id="dest2" value="}" /></td>
+</tr>
+<tr> 
+<td colspan=4><input id="sub" value="替换" type="button" onclick="onclick1()"/></td>
+</tr>
+<table>
+
+<textarea id="text1" rows="10" cols="100" >
+
+</textarea>
+<br>
+<textarea id="text2" rows="10" cols="100" >
+
+</textarea>
+
+</body>
+
+</html>
